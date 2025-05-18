@@ -1,30 +1,32 @@
-import { Assets as NavigationAssets } from '@react-navigation/elements';
-import { Asset } from 'expo-asset';
-import * as SplashScreen from 'expo-splash-screen';
-import * as React from 'react';
-import { Navigation } from './navigation';
+import React from "react";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { NavigationContainer } from "@react-navigation/native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { ThemeProvider } from "./hoc/ThemeProvider";
+import DrawerNavigator from "./navigation/DrawerNavigator";
 
-Asset.loadAsync([
-  ...NavigationAssets,
-  require('./assets/newspaper.png'),
-  require('./assets/bell.png'),
-]);
-
-SplashScreen.preventAutoHideAsync();
-
-export function App() {
+const App = () => {
   return (
-    <Navigation
-      linking={{
-        enabled: 'auto',
-        prefixes: [
-          // Change the scheme to match your app's scheme defined in app.json
-          'helloworld://',
-        ],
-      }}
-      onReady={() => {
-        SplashScreen.hideAsync();
-      }}
-    />
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaProvider>
+        <SafeAreaView style={{ flex: 1, backgroundColor: "transparent" }}>
+          <ThemeProvider>
+            <NavigationContainer
+              linking={{
+                enabled: true,
+                prefixes: [
+                  // Change the scheme to match your app's scheme defined in app.json
+                  "helloworld://",
+                ],
+              }}
+            >
+              <DrawerNavigator />
+            </NavigationContainer>
+          </ThemeProvider>
+        </SafeAreaView>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
-}
+};
+
+export default App;

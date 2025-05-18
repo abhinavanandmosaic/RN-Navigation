@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "rn-navigation",
+    "displayName": "RN Navigation",
     "slug": "rn-navigation",
     "version": "1.0.0",
     "orientation": "portrait",
