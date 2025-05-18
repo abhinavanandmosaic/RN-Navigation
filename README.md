@@ -1,85 +1,127 @@
-# React Native Custom Drawer Navigation App
+# 📱 React Native Custom Drawer Navigation App
 
-## Overview
+## 🚀 Overview
 
-This app demonstrates a custom animated drawer navigation system in React Native, featuring:
+This project is a demonstration of advanced navigation and UI architecture in **React Native**, designed with modularity and scalability in mind. It highlights my capabilities as a mobile developer, combining:
 
-- Custom Drawer with logo, icons, and sign out
-- Bottom Tab Navigator (Home, Contact)
-- Home Stack (Screen1, Screen2)
-- TypeScript and Zustand for state management
-- Theming (light/dark/system)
-- PNG assets for icons
+- 🎨 A **custom animated drawer**
+- 🧭 **Bottom Tab + Stack navigation**
+- 🌗 **Dynamic theming** (light, dark, system)
+- 🧠 **Zustand for state management**
+- ⚙️ **TypeScript-first development**
 
-## Folder Structure
+The app follows clean architecture principles and emphasizes maintainability and real-world readiness.
+
+## 📁 Folder Structure
 
 ```
 src/
-  assets/         # PNG icons and logo
-  components/     # Reusable UI components (Drawer, Header, ThemeProvider, etc.)
-  hoc/            # Higher Order Components
-  navigation/     # Navigation setup (TabNavigator, StackNavigator, types)
-  screens/        # App screens (Screen1, Screen2, etc.)
-  store/          # Zustand stores (theme, drawer, current screen)
-  App.tsx         # App entry point
+  ├── assets/         # PNG icons and logo
+  ├── components/     # Reusable UI (Header, Drawer, etc.)
+  ├── hoc/            # ThemeProvider HOC
+  ├── navigation/     # TabNavigator, StackNavigator, types
+  ├── screens/        # Screen1, Screen2, etc.
+  ├── store/          # Zustand stores (theme, drawer, screen state)
+  └── App.tsx         # Entry point
 ```
 
-## Navigation Structure
+## 🧭 Navigation Structure
 
 ```
 DrawerNavigator
   └── TabNavigator (Home, Contact)
-        ├── StackNavigator (Screen1, Screen2)
-        └── StackNavigator (Screen1, Screen2)
+        ├── StackNavigator (Screen1 → Screen2)
+        └── StackNavigator (Screen1 → Screen2)
 ```
 
-- **Drawer**: Custom, animated, with logo and menu items (icons from `src/assets/`)
-- **Tabs**: Home (stack), Contact (stack)
-- **Stack**: Each tab uses StackNavigator (Screen1 → Screen2)
-- **Header Logic**: Tab header is shown on Screen1, Stack header (with back button) is shown on Screen2
+### 🔹 Drawer
+- Fully **custom and animated**
+- Includes **logo**, **icons**, and **sign-out**
 
-## Assets
+### 🔹 Tabs
+- **Home** and **Contact** tabs
+- Each tab contains its own **stack**
 
-Place PNG icons in `src/assets/`:
+### 🔹 Stack Header Logic
+- **Tab header** shown on first screen (Screen1)
+- **Screen header with back button** shown on nested screens (Screen2+)
 
-- `home.png`, `contact.png`, `cart.png`, `favourites.png`, `order.png`, `logout.png`
+## 🎨 Theming
 
-## Setup & Running
+The app supports three theme modes:
 
-1. **Install dependencies:**
-   ```bash
-   yarn install
-   # or
-   npm install
-   ```
-2. **Start Metro bundler:**
-   ```bash
-   npx expo start -c
-   # or for bare RN: npx react-native start --reset-cache
-   ```
-3. **Run on device/emulator:**
-   ```bash
-   npx expo run:ios   # or npx react-native run-ios
-   npx expo run:android   # or npx react-native run-android
-   ```
+- 🌞 Light
+- 🌙 Dark
+- 🌓 System (auto)
 
-## Demo Checklist
+Themes are implemented using a custom provider and Zustand to persist user preferences.
 
-- [x] Drawer opens/closes with animation
-- [x] Drawer shows logo, menu items with icons, and sign out
-- [x] Tab navigation (Home, Contact) with icons
-- [x] Each tab uses stack navigation (Screen1 → Screen2)
-- [x] Tab header is shown on Screen1, stack header is shown on Screen2
-- [x] Theming works (light/dark/system)
-- [x] TypeScript and Zustand used throughout
+## 📦 Assets
 
-## Video Demo
+Icons located in `src/assets/`:
 
-- [Demo Video (mp4)](../assets/rn-navigation-demo.mp4)
+- `home.png`
+- `contact.png`
+- `cart.png`
+- `favourites.png`
+- `order.png`
+- `logout.png`
 
-1. Show the drawer opening/closing
-2. Navigate between Home/Contact tabs
-3. Navigate from Screen1 to Screen2
-4. Show theme switching (if implemented)
+## 🧪 Running the App
 
---
+### 1. Install Dependencies
+
+```bash
+yarn install
+# or
+npm install
+```
+
+### 2. Start Metro
+
+```bash
+npx expo start -c
+# or for bare RN:
+npx react-native start --reset-cache
+```
+
+### 3. Run on Device/Emulator
+
+```bash
+npx expo run:android   # or: npx react-native run-android
+npx expo run:ios       # or: npx react-native run-ios
+```
+
+## ✅ Demo Checklist
+
+- [x] Custom drawer with logo and icons
+- [x] Drawer animation + sign-out action
+- [x] Bottom tabs with icons (Home, Contact)
+- [x] Each tab uses a stack (Screen1 → Screen2)
+- [x] Tab header on first screen
+- [x] Screen header (with back) on nested screens
+- [x] Zustand state management
+- [x] Light/dark/system theme support
+- [x] TypeScript and scalable architecture
+
+## 🎥 Video Demo (GIF Preview)
+
+![Demo Preview](./assets/demo-preview.gif)
+
+**What you'll see:**
+
+1. Drawer open/close animations  
+2. Navigation: Home ↔ Contact  
+3. Stack navigation: Screen1 → Screen2  
+4. Dynamic theming toggle
+
+## 🙋‍♂️ About Me
+
+I’m currently exploring new opportunities as a **React Native Developer**. This project reflects my attention to detail, code organization, and ability to build user-focused experiences.
+
+- 📧 Email: abhinav.anand@mosaicwellness.in
+- 💼 [LinkedIn](https://www.linkedin.com/in/abhinavanand1310)
+
+## 📄 License
+
+MIT
